@@ -1,0 +1,715 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A677548829A407A400D5EC85 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A677548729A407A400D5EC85 /* UIColor+Extension.swift */; };
+		A677548A29A407BB00D5EC85 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A677548929A407BB00D5EC85 /* String+Extension.swift */; };
+		A677548C29A407D300D5EC85 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A677548B29A407D300D5EC85 /* UIView+Extension.swift */; };
+		A677548F29A40ECD00D5EC85 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A677548E29A40ECD00D5EC85 /* TabBarController.swift */; };
+		A677549129A40F0D00D5EC85 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A677549029A40F0D00D5EC85 /* SettingsView.swift */; };
+		A677549429A41ACA00D5EC85 /* MorseConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A677549329A41ACA00D5EC85 /* MorseConverter.swift */; };
+		A677549629A42F6100D5EC85 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A677549529A42F6100D5EC85 /* SettingsInteractor.swift */; };
+		A677549829A42F6B00D5EC85 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A677549729A42F6B00D5EC85 /* SettingsRouter.swift */; };
+		A677549A29A42F7600D5EC85 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A677549929A42F7600D5EC85 /* SettingsPresenter.swift */; };
+		A677549C29A42F8000D5EC85 /* SettingsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A677549B29A42F8000D5EC85 /* SettingsEntity.swift */; };
+		A6CBD07C29A402A000AAB1B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CBD07B29A402A000AAB1B9 /* AppDelegate.swift */; };
+		A6CBD07E29A402A000AAB1B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CBD07D29A402A000AAB1B9 /* SceneDelegate.swift */; };
+		A6CBD08029A402A000AAB1B9 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CBD07F29A402A000AAB1B9 /* MainScreenView.swift */; };
+		A6CBD08329A402A000AAB1B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6CBD08129A402A000AAB1B9 /* Main.storyboard */; };
+		A6CBD08529A402A100AAB1B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6CBD08429A402A100AAB1B9 /* Assets.xcassets */; };
+		A6CBD08829A402A100AAB1B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6CBD08629A402A100AAB1B9 /* LaunchScreen.storyboard */; };
+		A6CBD09329A402A100AAB1B9 /* MorseLightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CBD09229A402A100AAB1B9 /* MorseLightTests.swift */; };
+		A6CBD09D29A402A100AAB1B9 /* MorseLightUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CBD09C29A402A100AAB1B9 /* MorseLightUITests.swift */; };
+		A6CBD09F29A402A100AAB1B9 /* MorseLightUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CBD09E29A402A100AAB1B9 /* MorseLightUITestsLaunchTests.swift */; };
+		A6CBD0AF29A4046D00AAB1B9 /* MainScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CBD0AE29A4046D00AAB1B9 /* MainScreenInteractor.swift */; };
+		A6CBD0B129A4048000AAB1B9 /* MainScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CBD0B029A4048000AAB1B9 /* MainScreenPresenter.swift */; };
+		A6CBD0B329A4048A00AAB1B9 /* MainScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CBD0B229A4048A00AAB1B9 /* MainScreenRouter.swift */; };
+		A6CBD0B629A404B500AAB1B9 /* MainScreenEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CBD0B529A404B500AAB1B9 /* MainScreenEntity.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A6CBD08F29A402A100AAB1B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6CBD07029A4029F00AAB1B9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6CBD07729A402A000AAB1B9;
+			remoteInfo = MorseLight;
+		};
+		A6CBD09929A402A100AAB1B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6CBD07029A4029F00AAB1B9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6CBD07729A402A000AAB1B9;
+			remoteInfo = MorseLight;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A677548729A407A400D5EC85 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		A677548929A407BB00D5EC85 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		A677548B29A407D300D5EC85 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		A677548E29A40ECD00D5EC85 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		A677549029A40F0D00D5EC85 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A677549329A41ACA00D5EC85 /* MorseConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorseConverter.swift; sourceTree = "<group>"; };
+		A677549529A42F6100D5EC85 /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
+		A677549729A42F6B00D5EC85 /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		A677549929A42F7600D5EC85 /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		A677549B29A42F8000D5EC85 /* SettingsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsEntity.swift; sourceTree = "<group>"; };
+		A6CBD07829A402A000AAB1B9 /* MorseLight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorseLight.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6CBD07B29A402A000AAB1B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A6CBD07D29A402A000AAB1B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A6CBD07F29A402A000AAB1B9 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
+		A6CBD08229A402A000AAB1B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A6CBD08429A402A100AAB1B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A6CBD08729A402A100AAB1B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A6CBD08929A402A100AAB1B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6CBD08E29A402A100AAB1B9 /* MorseLightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MorseLightTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6CBD09229A402A100AAB1B9 /* MorseLightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorseLightTests.swift; sourceTree = "<group>"; };
+		A6CBD09829A402A100AAB1B9 /* MorseLightUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MorseLightUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6CBD09C29A402A100AAB1B9 /* MorseLightUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorseLightUITests.swift; sourceTree = "<group>"; };
+		A6CBD09E29A402A100AAB1B9 /* MorseLightUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorseLightUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A6CBD0AE29A4046D00AAB1B9 /* MainScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenInteractor.swift; sourceTree = "<group>"; };
+		A6CBD0B029A4048000AAB1B9 /* MainScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenPresenter.swift; sourceTree = "<group>"; };
+		A6CBD0B229A4048A00AAB1B9 /* MainScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenRouter.swift; sourceTree = "<group>"; };
+		A6CBD0B529A404B500AAB1B9 /* MainScreenEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenEntity.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A6CBD07529A402A000AAB1B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6CBD08B29A402A100AAB1B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6CBD09529A402A100AAB1B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A677548D29A40E8D00D5EC85 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				A677548E29A40ECD00D5EC85 /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		A677549229A41A9900D5EC85 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A677549329A41ACA00D5EC85 /* MorseConverter.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		A6CBD06F29A4029F00AAB1B9 = {
+			isa = PBXGroup;
+			children = (
+				A6CBD07A29A402A000AAB1B9 /* MorseLight */,
+				A6CBD09129A402A100AAB1B9 /* MorseLightTests */,
+				A6CBD09B29A402A100AAB1B9 /* MorseLightUITests */,
+				A6CBD07929A402A000AAB1B9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A6CBD07929A402A000AAB1B9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A6CBD07829A402A000AAB1B9 /* MorseLight.app */,
+				A6CBD08E29A402A100AAB1B9 /* MorseLightTests.xctest */,
+				A6CBD09829A402A100AAB1B9 /* MorseLightUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A6CBD07A29A402A000AAB1B9 /* MorseLight */ = {
+			isa = PBXGroup;
+			children = (
+				A6CBD0AC29A402F700AAB1B9 /* Application */,
+				A6CBD0AD29A402FE00AAB1B9 /* SettingsModule */,
+				A6CBD0AB29A402E900AAB1B9 /* MainScreenModule */,
+				A677548D29A40E8D00D5EC85 /* TabBar */,
+				A6CBD0B729A405AB00AAB1B9 /* Extensions */,
+				A6CBD08129A402A000AAB1B9 /* Main.storyboard */,
+				A6CBD08429A402A100AAB1B9 /* Assets.xcassets */,
+				A6CBD08629A402A100AAB1B9 /* LaunchScreen.storyboard */,
+				A6CBD08929A402A100AAB1B9 /* Info.plist */,
+			);
+			path = MorseLight;
+			sourceTree = "<group>";
+		};
+		A6CBD09129A402A100AAB1B9 /* MorseLightTests */ = {
+			isa = PBXGroup;
+			children = (
+				A6CBD09229A402A100AAB1B9 /* MorseLightTests.swift */,
+			);
+			path = MorseLightTests;
+			sourceTree = "<group>";
+		};
+		A6CBD09B29A402A100AAB1B9 /* MorseLightUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A6CBD09C29A402A100AAB1B9 /* MorseLightUITests.swift */,
+				A6CBD09E29A402A100AAB1B9 /* MorseLightUITestsLaunchTests.swift */,
+			);
+			path = MorseLightUITests;
+			sourceTree = "<group>";
+		};
+		A6CBD0AB29A402E900AAB1B9 /* MainScreenModule */ = {
+			isa = PBXGroup;
+			children = (
+				A677549229A41A9900D5EC85 /* Service */,
+				A6CBD07F29A402A000AAB1B9 /* MainScreenView.swift */,
+				A6CBD0AE29A4046D00AAB1B9 /* MainScreenInteractor.swift */,
+				A6CBD0B029A4048000AAB1B9 /* MainScreenPresenter.swift */,
+				A6CBD0B529A404B500AAB1B9 /* MainScreenEntity.swift */,
+				A6CBD0B229A4048A00AAB1B9 /* MainScreenRouter.swift */,
+			);
+			path = MainScreenModule;
+			sourceTree = "<group>";
+		};
+		A6CBD0AC29A402F700AAB1B9 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A6CBD07B29A402A000AAB1B9 /* AppDelegate.swift */,
+				A6CBD07D29A402A000AAB1B9 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		A6CBD0AD29A402FE00AAB1B9 /* SettingsModule */ = {
+			isa = PBXGroup;
+			children = (
+				A677549029A40F0D00D5EC85 /* SettingsView.swift */,
+				A677549529A42F6100D5EC85 /* SettingsInteractor.swift */,
+				A677549929A42F7600D5EC85 /* SettingsPresenter.swift */,
+				A677549B29A42F8000D5EC85 /* SettingsEntity.swift */,
+				A677549729A42F6B00D5EC85 /* SettingsRouter.swift */,
+			);
+			path = SettingsModule;
+			sourceTree = "<group>";
+		};
+		A6CBD0B729A405AB00AAB1B9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A677548729A407A400D5EC85 /* UIColor+Extension.swift */,
+				A677548929A407BB00D5EC85 /* String+Extension.swift */,
+				A677548B29A407D300D5EC85 /* UIView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A6CBD07729A402A000AAB1B9 /* MorseLight */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6CBD0A229A402A100AAB1B9 /* Build configuration list for PBXNativeTarget "MorseLight" */;
+			buildPhases = (
+				A6CBD07429A402A000AAB1B9 /* Sources */,
+				A6CBD07529A402A000AAB1B9 /* Frameworks */,
+				A6CBD07629A402A000AAB1B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MorseLight;
+			packageProductDependencies = (
+			);
+			productName = MorseLight;
+			productReference = A6CBD07829A402A000AAB1B9 /* MorseLight.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A6CBD08D29A402A100AAB1B9 /* MorseLightTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6CBD0A529A402A100AAB1B9 /* Build configuration list for PBXNativeTarget "MorseLightTests" */;
+			buildPhases = (
+				A6CBD08A29A402A100AAB1B9 /* Sources */,
+				A6CBD08B29A402A100AAB1B9 /* Frameworks */,
+				A6CBD08C29A402A100AAB1B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A6CBD09029A402A100AAB1B9 /* PBXTargetDependency */,
+			);
+			name = MorseLightTests;
+			productName = MorseLightTests;
+			productReference = A6CBD08E29A402A100AAB1B9 /* MorseLightTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A6CBD09729A402A100AAB1B9 /* MorseLightUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6CBD0A829A402A100AAB1B9 /* Build configuration list for PBXNativeTarget "MorseLightUITests" */;
+			buildPhases = (
+				A6CBD09429A402A100AAB1B9 /* Sources */,
+				A6CBD09529A402A100AAB1B9 /* Frameworks */,
+				A6CBD09629A402A100AAB1B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A6CBD09A29A402A100AAB1B9 /* PBXTargetDependency */,
+			);
+			name = MorseLightUITests;
+			productName = MorseLightUITests;
+			productReference = A6CBD09829A402A100AAB1B9 /* MorseLightUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A6CBD07029A4029F00AAB1B9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					A6CBD07729A402A000AAB1B9 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					A6CBD08D29A402A100AAB1B9 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = A6CBD07729A402A000AAB1B9;
+					};
+					A6CBD09729A402A100AAB1B9 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = A6CBD07729A402A000AAB1B9;
+					};
+				};
+			};
+			buildConfigurationList = A6CBD07329A4029F00AAB1B9 /* Build configuration list for PBXProject "MorseLight" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A6CBD06F29A4029F00AAB1B9;
+			packageReferences = (
+			);
+			productRefGroup = A6CBD07929A402A000AAB1B9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A6CBD07729A402A000AAB1B9 /* MorseLight */,
+				A6CBD08D29A402A100AAB1B9 /* MorseLightTests */,
+				A6CBD09729A402A100AAB1B9 /* MorseLightUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A6CBD07629A402A000AAB1B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6CBD08829A402A100AAB1B9 /* LaunchScreen.storyboard in Resources */,
+				A6CBD08529A402A100AAB1B9 /* Assets.xcassets in Resources */,
+				A6CBD08329A402A000AAB1B9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6CBD08C29A402A100AAB1B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6CBD09629A402A100AAB1B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A6CBD07429A402A000AAB1B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6CBD08029A402A000AAB1B9 /* MainScreenView.swift in Sources */,
+				A677548A29A407BB00D5EC85 /* String+Extension.swift in Sources */,
+				A677548F29A40ECD00D5EC85 /* TabBarController.swift in Sources */,
+				A6CBD0B629A404B500AAB1B9 /* MainScreenEntity.swift in Sources */,
+				A6CBD0AF29A4046D00AAB1B9 /* MainScreenInteractor.swift in Sources */,
+				A677549429A41ACA00D5EC85 /* MorseConverter.swift in Sources */,
+				A6CBD07C29A402A000AAB1B9 /* AppDelegate.swift in Sources */,
+				A677549629A42F6100D5EC85 /* SettingsInteractor.swift in Sources */,
+				A6CBD0B329A4048A00AAB1B9 /* MainScreenRouter.swift in Sources */,
+				A6CBD07E29A402A000AAB1B9 /* SceneDelegate.swift in Sources */,
+				A6CBD0B129A4048000AAB1B9 /* MainScreenPresenter.swift in Sources */,
+				A677549A29A42F7600D5EC85 /* SettingsPresenter.swift in Sources */,
+				A677549829A42F6B00D5EC85 /* SettingsRouter.swift in Sources */,
+				A677548C29A407D300D5EC85 /* UIView+Extension.swift in Sources */,
+				A677548829A407A400D5EC85 /* UIColor+Extension.swift in Sources */,
+				A677549C29A42F8000D5EC85 /* SettingsEntity.swift in Sources */,
+				A677549129A40F0D00D5EC85 /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6CBD08A29A402A100AAB1B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6CBD09329A402A100AAB1B9 /* MorseLightTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6CBD09429A402A100AAB1B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6CBD09F29A402A100AAB1B9 /* MorseLightUITestsLaunchTests.swift in Sources */,
+				A6CBD09D29A402A100AAB1B9 /* MorseLightUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A6CBD09029A402A100AAB1B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A6CBD07729A402A000AAB1B9 /* MorseLight */;
+			targetProxy = A6CBD08F29A402A100AAB1B9 /* PBXContainerItemProxy */;
+		};
+		A6CBD09A29A402A100AAB1B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A6CBD07729A402A000AAB1B9 /* MorseLight */;
+			targetProxy = A6CBD09929A402A100AAB1B9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A6CBD08129A402A000AAB1B9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6CBD08229A402A000AAB1B9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A6CBD08629A402A100AAB1B9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6CBD08729A402A100AAB1B9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A6CBD0A029A402A100AAB1B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A6CBD0A129A402A100AAB1B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A6CBD0A329A402A100AAB1B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X3RLZK92Q3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MorseLight/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maxkuznetsov.MorseLight;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A6CBD0A429A402A100AAB1B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X3RLZK92Q3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MorseLight/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maxkuznetsov.MorseLight;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A6CBD0A629A402A100AAB1B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X3RLZK92Q3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maxkuznetsov.MorseLightTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MorseLight.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MorseLight";
+			};
+			name = Debug;
+		};
+		A6CBD0A729A402A100AAB1B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X3RLZK92Q3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maxkuznetsov.MorseLightTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MorseLight.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MorseLight";
+			};
+			name = Release;
+		};
+		A6CBD0A929A402A100AAB1B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X3RLZK92Q3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maxkuznetsov.MorseLightUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MorseLight;
+			};
+			name = Debug;
+		};
+		A6CBD0AA29A402A100AAB1B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X3RLZK92Q3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maxkuznetsov.MorseLightUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MorseLight;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A6CBD07329A4029F00AAB1B9 /* Build configuration list for PBXProject "MorseLight" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6CBD0A029A402A100AAB1B9 /* Debug */,
+				A6CBD0A129A402A100AAB1B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6CBD0A229A402A100AAB1B9 /* Build configuration list for PBXNativeTarget "MorseLight" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6CBD0A329A402A100AAB1B9 /* Debug */,
+				A6CBD0A429A402A100AAB1B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6CBD0A529A402A100AAB1B9 /* Build configuration list for PBXNativeTarget "MorseLightTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6CBD0A629A402A100AAB1B9 /* Debug */,
+				A6CBD0A729A402A100AAB1B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6CBD0A829A402A100AAB1B9 /* Build configuration list for PBXNativeTarget "MorseLightUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6CBD0A929A402A100AAB1B9 /* Debug */,
+				A6CBD0AA29A402A100AAB1B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A6CBD07029A4029F00AAB1B9 /* Project object */;
+}
