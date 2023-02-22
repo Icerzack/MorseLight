@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         
         let mainScreenVC = MainScreenViewController()
-        mainScreenVC.title = "Convert"
+        mainScreenVC.title = tabBarVC.mainScreenTitle
                 
         let mainScreenInteractor = MainScreenInteractor()
         let mainScreenPresenter = MainScreenPresenter()
@@ -42,8 +42,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         
         let settingsVC = SettingsViewController()
+        settingsVC.title = tabBarVC.settingsTitle
+        
+        let settingsInteractor = SettingsInteractor()
+        let settingsPresenter = SettingsPresenter()
+        let settingsRouter = SettingsRouter()
 
-        settingsVC.title = "Settings"
+        settingsInteractor.presenter = settingsPresenter
+
+        settingsPresenter.view = settingsVC
+        settingsPresenter.interactor = settingsInteractor
+        settingsPresenter.router = settingsRouter
+
+        settingsVC.presenter = settingsPresenter
         
         tabBarVC.setViewControllers([mainScreenVC, settingsVC], animated: true)
         

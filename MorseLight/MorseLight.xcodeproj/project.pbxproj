@@ -30,6 +30,10 @@
 		A6CBD0B129A4048000AAB1B9 /* MainScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CBD0B029A4048000AAB1B9 /* MainScreenPresenter.swift */; };
 		A6CBD0B329A4048A00AAB1B9 /* MainScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CBD0B229A4048A00AAB1B9 /* MainScreenRouter.swift */; };
 		A6CBD0B629A404B500AAB1B9 /* MainScreenEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CBD0B529A404B500AAB1B9 /* MainScreenEntity.swift */; };
+		A6D34B2D29A4D384007361BE /* SettingsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D34B2C29A4D384007361BE /* SettingsStorage.swift */; };
+		A6D34B2F29A4D931007361BE /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D34B2E29A4D931007361BE /* UserDefaults+Extension.swift */; };
+		A6D34B3229A4F328007361BE /* SwiftMessages in Frameworks */ = {isa = PBXBuildFile; productRef = A6D34B3129A4F328007361BE /* SwiftMessages */; };
+		A6D34B3429A550F9007361BE /* LocalizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D34B3329A550F9007361BE /* LocalizationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +81,9 @@
 		A6CBD0B029A4048000AAB1B9 /* MainScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenPresenter.swift; sourceTree = "<group>"; };
 		A6CBD0B229A4048A00AAB1B9 /* MainScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenRouter.swift; sourceTree = "<group>"; };
 		A6CBD0B529A404B500AAB1B9 /* MainScreenEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenEntity.swift; sourceTree = "<group>"; };
+		A6D34B2C29A4D384007361BE /* SettingsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStorage.swift; sourceTree = "<group>"; };
+		A6D34B2E29A4D931007361BE /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		A6D34B3329A550F9007361BE /* LocalizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6D34B3229A4F328007361BE /* SwiftMessages in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				A677549329A41ACA00D5EC85 /* MorseConverter.swift */,
+				A6D34B2C29A4D384007361BE /* SettingsStorage.swift */,
+				A6D34B3329A550F9007361BE /* LocalizationService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -146,6 +156,7 @@
 				A6CBD0AC29A402F700AAB1B9 /* Application */,
 				A6CBD0AD29A402FE00AAB1B9 /* SettingsModule */,
 				A6CBD0AB29A402E900AAB1B9 /* MainScreenModule */,
+				A677549229A41A9900D5EC85 /* Service */,
 				A677548D29A40E8D00D5EC85 /* TabBar */,
 				A6CBD0B729A405AB00AAB1B9 /* Extensions */,
 				A6CBD08129A402A000AAB1B9 /* Main.storyboard */,
@@ -159,6 +170,7 @@
 		A6CBD09129A402A100AAB1B9 /* MorseLightTests */ = {
 			isa = PBXGroup;
 			children = (
+				A6D34B3729A6D274007361BE /* MainScreenModule */,
 				A6CBD09229A402A100AAB1B9 /* MorseLightTests.swift */,
 			);
 			path = MorseLightTests;
@@ -176,7 +188,6 @@
 		A6CBD0AB29A402E900AAB1B9 /* MainScreenModule */ = {
 			isa = PBXGroup;
 			children = (
-				A677549229A41A9900D5EC85 /* Service */,
 				A6CBD07F29A402A000AAB1B9 /* MainScreenView.swift */,
 				A6CBD0AE29A4046D00AAB1B9 /* MainScreenInteractor.swift */,
 				A6CBD0B029A4048000AAB1B9 /* MainScreenPresenter.swift */,
@@ -213,8 +224,16 @@
 				A677548729A407A400D5EC85 /* UIColor+Extension.swift */,
 				A677548929A407BB00D5EC85 /* String+Extension.swift */,
 				A677548B29A407D300D5EC85 /* UIView+Extension.swift */,
+				A6D34B2E29A4D931007361BE /* UserDefaults+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A6D34B3729A6D274007361BE /* MainScreenModule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MainScreenModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +253,7 @@
 			);
 			name = MorseLight;
 			packageProductDependencies = (
+				A6D34B3129A4F328007361BE /* SwiftMessages */,
 			);
 			productName = MorseLight;
 			productReference = A6CBD07829A402A000AAB1B9 /* MorseLight.app */;
@@ -308,6 +328,7 @@
 			);
 			mainGroup = A6CBD06F29A4029F00AAB1B9;
 			packageReferences = (
+				A6D34B3029A4F328007361BE /* XCRemoteSwiftPackageReference "SwiftMessages" */,
 			);
 			productRefGroup = A6CBD07929A402A000AAB1B9 /* Products */;
 			projectDirPath = "";
@@ -358,14 +379,17 @@
 				A6CBD0B629A404B500AAB1B9 /* MainScreenEntity.swift in Sources */,
 				A6CBD0AF29A4046D00AAB1B9 /* MainScreenInteractor.swift in Sources */,
 				A677549429A41ACA00D5EC85 /* MorseConverter.swift in Sources */,
+				A6D34B3429A550F9007361BE /* LocalizationService.swift in Sources */,
 				A6CBD07C29A402A000AAB1B9 /* AppDelegate.swift in Sources */,
 				A677549629A42F6100D5EC85 /* SettingsInteractor.swift in Sources */,
 				A6CBD0B329A4048A00AAB1B9 /* MainScreenRouter.swift in Sources */,
 				A6CBD07E29A402A000AAB1B9 /* SceneDelegate.swift in Sources */,
 				A6CBD0B129A4048000AAB1B9 /* MainScreenPresenter.swift in Sources */,
+				A6D34B2F29A4D931007361BE /* UserDefaults+Extension.swift in Sources */,
 				A677549A29A42F7600D5EC85 /* SettingsPresenter.swift in Sources */,
 				A677549829A42F6B00D5EC85 /* SettingsRouter.swift in Sources */,
 				A677548C29A407D300D5EC85 /* UIView+Extension.swift in Sources */,
+				A6D34B2D29A4D384007361BE /* SettingsStorage.swift in Sources */,
 				A677548829A407A400D5EC85 /* UIColor+Extension.swift in Sources */,
 				A677549C29A42F8000D5EC85 /* SettingsEntity.swift in Sources */,
 				A677549129A40F0D00D5EC85 /* SettingsView.swift in Sources */,
@@ -560,6 +584,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.maxkuznetsov.MorseLight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -588,6 +615,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.maxkuznetsov.MorseLight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -710,6 +740,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A6D34B3029A4F328007361BE /* XCRemoteSwiftPackageReference "SwiftMessages" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftKickMobile/SwiftMessages.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A6D34B3129A4F328007361BE /* SwiftMessages */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A6D34B3029A4F328007361BE /* XCRemoteSwiftPackageReference "SwiftMessages" */;
+			productName = SwiftMessages;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A6CBD07029A4029F00AAB1B9 /* Project object */;
 }

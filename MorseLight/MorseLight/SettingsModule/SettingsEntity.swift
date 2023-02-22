@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+struct Settings {
+    var dotSpeed: Float
+    var dashSpeed: Float
+    var language: Languages
+}
+
+enum Languages: String {
+    case russian
+    case english
+}
+
+enum LanguageErrors: Error {
+    case noSuchLanguageError
+}

@@ -46,7 +46,7 @@ extension UIView {
     func fadeIn(completion: (() -> Void)? = nil) {
         alpha = 0
         isHidden = false
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: 0.1, animations: {
             self.alpha = 1
         }) { (_) in
             completion?()
@@ -54,7 +54,7 @@ extension UIView {
     }
     
     func fadeOut(completion: (() -> Void)? = nil) {
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: 0.1, animations: {
             self.alpha = 0
         }) { (_) in
             self.isHidden = true

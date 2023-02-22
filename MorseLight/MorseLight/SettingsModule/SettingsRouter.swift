@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+protocol SettingsRouterProtocol {
+    //no need in this
+}
+
+final class SettingsRouter: SettingsRouterProtocol {
+    //no need in this
+}
+
+
+

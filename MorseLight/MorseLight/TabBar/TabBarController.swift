@@ -9,8 +9,46 @@ import UIKit
 
 class TabBarController: UITabBarController {
     
+    var mainScreenTitle = "" {
+        didSet {
+            viewControllers?.forEach({ vc in
+                if vc is MainScreenViewController {
+                    vc.title = mainScreenTitle
+                }
+            })
+        }
+    }
+    var settingsTitle = "" {
+        didSet {
+            viewControllers?.forEach({ vc in
+                if vc is SettingsViewController {
+                    vc.title = settingsTitle
+                }
+            })
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        LocalizationService.shared.subscribe(self)
+        
+        if UserDefaults.standard.object(forKey: UserDefaults.settingsLanguageKey) == nil {
+            LocalizationService.shared.setupEnglishLocalization()
+            UserDefaults.standard.setValue(Languages.english.rawValue, forKey: UserDefaults.settingsLanguageKey)
+        } else {
+            switch UserDefaults.standard.object(forKey: UserDefaults.settingsLanguageKey) as? String {
+            case Languages.english.rawValue:
+                LocalizationService.shared.setupEnglishLocalization()
+            case Languages.russian.rawValue:
+                LocalizationService.shared.setupRussianLocalization()
+            case .none:
+                break
+            case .some(_):
+                break
+            }
+        }
+        
         delegate = self
     }
 }
@@ -28,4 +66,12 @@ extension TabBarController: UITabBarControllerDelegate {
         
         return true
     }
+}
+
+extension TabBarController: LocalizationServiceObserver {
+    func didUpdateCurrentLocalization(newLocalizationCollection: [AppStrings : String]) {
+        mainScreenTitle = newLocalizationCollection[.tabBarConvertButton] ?? "Convert"
+        settingsTitle = newLocalizationCollection[.tabBarSettingsButton] ?? "Settings"
+    }
+    
 }

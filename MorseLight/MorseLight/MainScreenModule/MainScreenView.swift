@@ -10,20 +10,43 @@ import AVFoundation
 
 protocol MainScreenViewProtocol: AnyObject {
     func displayConvertedToMorseText(textToDisplay: String)
+    func didReceiveDefaultLocalizationSetupResult(result: Result<String, Error>)
+    func didReceiveSavedSettings(dotSpeed: Float, dashSpeed: Float)
 }
 
-class MainScreenViewController: UIViewController, MainScreenViewProtocol {
+final class MainScreenViewController: UIViewController {
     
     var presenter: MainScreenPresenterProtocol?
+    
     private var shouldContinueFlashing = true
+    private var dotSpeed: Float = 0.2
+    private var dashSpeed: Float = 0.6
     private let device = AVCaptureDevice.default(for: .video)
     
+    private var screenStrings: [AppStrings:String] = [:] {
+        didSet {
+            guard !screenStrings.isEmpty else { return }
+            
+            topTitle.text = screenStrings[.mainScreenTitle]
+            inputAreaHint.text = screenStrings[.mainScreenInputAreaHint]
+            outputAreaHint.text = screenStrings[.mainScreenOutputAreaHint]
+            if flashButton.backgroundColor != .red {
+                UIView.performWithoutAnimation {
+                    flashButton.setTitle(screenStrings[.mainScreenFlashButtonStart], for: .normal)
+                    flashButton.layoutIfNeeded()
+                }
+            } else {
+                UIView.performWithoutAnimation {
+                    flashButton.setTitle(screenStrings[.mainScreenFlashButtonStop], for: .normal)
+                    flashButton.layoutIfNeeded()
+                }
+            }
+        }
+    }
     
     private let topTitle: UILabel = {
         let titleLabel = UILabel()
-        titleLabel.text = "MorseLight  🔦"
         titleLabel.textColor = UIColor(red: 238, green: 242, blue: 254)
-        titleLabel.textColor = .white
         return titleLabel
     }()
     
@@ -41,10 +64,28 @@ class MainScreenViewController: UIViewController, MainScreenViewProtocol {
         return view
     }()
     
+    private let inputAreaHint: UILabel = {
+        let label = UILabel()
+        label.textColor = .systemGray
+        label.layer.cornerRadius = 25
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.isUserInteractionEnabled = true
+        return label
+    }()
+    
+    private let outputAreaHint: UILabel = {
+        let label = UILabel()
+        label.textColor = .systemGray
+        label.layer.cornerRadius = 25
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        return label
+    }()
+    
     private let flashButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = UIColor(red: 82, green: 25, blue: 241)
-        button.setTitle("Flash! 💡", for: .normal)
         button.layer.cornerRadius = 20
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(didTapFlashButton), for: .touchUpInside)
@@ -72,29 +113,40 @@ class MainScreenViewController: UIViewController, MainScreenViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.viewDidLoad()
+
         view.backgroundColor = UIColor(red: 4, green: 7, blue: 46)
         topTitle.font = UIFont.boldSystemFont(ofSize: view.bounds.height/25)
+        inputAreaHint.font = UIFont.systemFont(ofSize: view.bounds.height/65)
+        outputAreaHint.font = UIFont.systemFont(ofSize: view.bounds.height/65)
         
         inputAreaTextView.delegate = self
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-        
-        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-        //tap.cancelsTouchesInView = false
-        
         view.addGestureRecognizer(tap)
+        
+        let tapForInput = UITapGestureRecognizer(target: self, action: #selector(didTapInputArea))
+        inputAreaHint.addGestureRecognizer(tapForInput)
         
         setupConstraints()
         
     }
     
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
+    override func viewDidAppear(_ animated: Bool) {
+        presenter?.viewDidAppear()
     }
     
     private func setupConstraints() {
         [topTitle, inputArea, outputArea, flashButton].forEach { element in
             view.addSubview(element)
+        }
+        
+        [inputAreaTextView, inputAreaHint].forEach { element in
+            inputArea.addSubview(element)
+        }
+        
+        [outputAreaTextView, outputAreaHint].forEach { element in
+            outputArea.addSubview(element)
         }
         
         let height = view.bounds.height
@@ -104,30 +156,23 @@ class MainScreenViewController: UIViewController, MainScreenViewProtocol {
         outputArea.anchor(top: inputArea.bottomAnchor, left: view.leadingAnchor, bottom: nil, right: view.trailingAnchor, paddingTop: height/17, paddingLeft: 30, paddingBottom: 0, paddingRight: 30, width: 0, height: height/6, enableInsets: false)
         flashButton.anchor(top: nil, left: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.trailingAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: 30, paddingRight: 20, width: 0, height: 50, enableInsets: false)
         
-        inputArea.addSubview(inputAreaTextView)
-        
         inputAreaTextView.anchor(top: inputArea.topAnchor, left: inputArea.leadingAnchor, bottom: inputArea.bottomAnchor, right: inputArea.trailingAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: 0, height: 0, enableInsets: false)
-        
-        outputArea.addSubview(outputAreaTextView)
+        inputAreaHint.anchor(top: inputArea.topAnchor, left: inputArea.leadingAnchor, bottom: inputArea.bottomAnchor, right: inputArea.trailingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
         
         outputAreaTextView.anchor(top: outputArea.topAnchor, left: outputArea.leadingAnchor, bottom: outputArea.bottomAnchor, right: outputArea.trailingAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: 0, height: 0, enableInsets: false)
-    }
-    
-    //Get From Presenter
-    func displayConvertedToMorseText(textToDisplay: String) {
-        outputAreaTextView.text = textToDisplay
+        outputAreaHint.anchor(top: outputArea.topAnchor, left: outputArea.leadingAnchor, bottom: outputArea.bottomAnchor, right: outputArea.trailingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
     }
     
     @objc func didTapFlashButton(){
-        
+        guard !inputAreaTextView.text.isEmpty else { return }
         if flashButton.backgroundColor == .red {
             stopFlashing()
-            flashButton.setTitle("Flash! 💡", for: .normal)
+            flashButton.setTitle(screenStrings[.mainScreenFlashButtonStart], for: .normal)
             UIView.animate(withDuration: 0.6, delay: 0.0, options:[.curveEaseOut], animations: { [weak self] in
                 self?.flashButton.backgroundColor = UIColor(red: 82, green: 25, blue: 241)
             }, completion: nil)
         } else {
-            flashButton.setTitle("Stop ⛔️", for: .normal)
+            flashButton.setTitle(screenStrings[.mainScreenFlashButtonStop], for: .normal)
             UIView.animate(withDuration: 0.6, delay: 0.0, options:[.curveEaseIn], animations: { [weak self] in
                 self?.flashButton.backgroundColor = .red
             }, completion: nil)
@@ -139,8 +184,21 @@ class MainScreenViewController: UIViewController, MainScreenViewProtocol {
         
     }
     
+    @objc func dismissKeyboard() {
+        if inputAreaTextView.text.isEmpty {
+            if inputAreaHint.isHidden {
+                inputAreaHint.fadeIn()
+            }
+        }
+        view.endEditing(true)
+    }
+    
+    @objc func didTapInputArea() {
+        inputAreaHint.fadeOut()
+        inputAreaTextView.becomeFirstResponder()
+    }
+    
     private func performFlashing(withText: String){
-        
         if (device?.isTorchModeSupported(.on))! {
             let textToDisplay = Array(withText)
             shouldContinueFlashing = true
@@ -152,21 +210,21 @@ class MainScreenViewController: UIViewController, MainScreenViewProtocol {
                     }
                     if character == "." {
                         flashLightOn()
-                        Thread.sleep(forTimeInterval: 0.2)
+                        Thread.sleep(forTimeInterval: Double(dotSpeed))
                         flashLightOff()
-                        Thread.sleep(forTimeInterval: 0.2)
+                        Thread.sleep(forTimeInterval: Double(dotSpeed))
                     } else if character == "-" {
                         flashLightOn()
-                        Thread.sleep(forTimeInterval: 0.5)
+                        Thread.sleep(forTimeInterval: Double(dashSpeed))
                         flashLightOff()
-                        Thread.sleep(forTimeInterval: 0.2)
+                        Thread.sleep(forTimeInterval: Double(dotSpeed))
                     } else {
-                        Thread.sleep(forTimeInterval: 0.4)
+                        Thread.sleep(forTimeInterval: 2*Double(dotSpeed))
                     }
                 }
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [self] in
                     stopFlashing()
-                    flashButton.setTitle("Flash! 💡", for: .normal)
+                    flashButton.setTitle(screenStrings[.mainScreenFlashButtonStart], for: .normal)
                     UIView.animate(withDuration: 0.6, delay: 0.0, options:[.curveEaseOut], animations: { [weak self] in
                         self?.flashButton.backgroundColor = UIColor(red: 82, green: 25, blue: 241)
                     }, completion: nil)
@@ -179,7 +237,6 @@ class MainScreenViewController: UIViewController, MainScreenViewProtocol {
         do {
             try device?.lockForConfiguration()
             device?.torchMode = .on
-            
             device?.unlockForConfiguration()
         } catch {
             print(error)
@@ -190,7 +247,6 @@ class MainScreenViewController: UIViewController, MainScreenViewProtocol {
         do {
             try device?.lockForConfiguration()
             device?.torchMode = .off
-            
             device?.unlockForConfiguration()
         } catch {
             print(error)
@@ -202,8 +258,44 @@ class MainScreenViewController: UIViewController, MainScreenViewProtocol {
     }
 }
 
+
 extension MainScreenViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
+        if !textView.text.isEmpty {
+            outputAreaHint.fadeOut()
+        } else {
+            outputAreaHint.fadeIn()
+        }
         presenter?.didChangeTextField(newText: textView.text)
+    }
+}
+
+
+extension MainScreenViewController: LocalizationServiceObserver {
+    func didUpdateCurrentLocalization(newLocalizationCollection: [AppStrings : String]) {
+        screenStrings = newLocalizationCollection
+    }
+}
+
+extension MainScreenViewController: MainScreenViewProtocol {
+    //Get From Presenter
+    func displayConvertedToMorseText(textToDisplay: String) {
+        outputAreaTextView.text = textToDisplay
+    }
+    
+    //Get from Presenter
+    func didReceiveDefaultLocalizationSetupResult(result: Result<String, Error>) {
+        switch result {
+        case .success(let success):
+            print("Setup default lang: ", success)
+        case .failure(let failure):
+            print("Error setting up default lang: ", failure)
+        }
+    }
+    
+    //Get from Presenter
+    func didReceiveSavedSettings(dotSpeed: Float, dashSpeed: Float) {
+        self.dotSpeed = dotSpeed
+        self.dashSpeed = dashSpeed
     }
 }
