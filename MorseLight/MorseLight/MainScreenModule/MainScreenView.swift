@@ -7,6 +7,7 @@
 
 import UIKit
 import AVFoundation
+import SwiftMessages
 
 protocol MainScreenViewProtocol: AnyObject {
     func displayConvertedToMorseText(textToDisplay: String)
@@ -165,6 +166,24 @@ final class MainScreenViewController: UIViewController {
     
     @objc func didTapFlashButton(){
         guard !inputAreaTextView.text.isEmpty else { return }
+        guard device?.isTorchModeSupported(.on) == true else {
+            let messageView: MessageView = MessageView.viewFromNib(layout: .centeredView)
+            messageView.configureBackgroundView(width: 250)
+
+            messageView.configureContent(title: "😱", body: screenStrings[.mainScreenErrorMessageNoFlashlight], iconImage: nil, iconText: nil, buttonImage: nil, buttonTitle: "OK") { button in
+                SwiftMessages.hide()
+            }
+            messageView.backgroundView.layer.cornerRadius = 10
+            messageView.configureTheme(backgroundColor: UIColor(red: 20, green: 24, blue: 62), foregroundColor: .white)
+            var config = SwiftMessages.defaultConfig
+            config.presentationStyle = .center
+            config.duration = .forever
+            config.dimMode = .blur(style: .dark, alpha: 0.9, interactive: true)
+            config.presentationContext  = .window(windowLevel: UIWindow.Level.statusBar)
+            SwiftMessages.show(config: config, view: messageView)
+            
+            return
+        }
         if flashButton.backgroundColor == .red {
             stopFlashing()
             flashButton.setTitle(screenStrings[.mainScreenFlashButtonStart], for: .normal)
@@ -199,6 +218,7 @@ final class MainScreenViewController: UIViewController {
     }
     
     private func performFlashing(withText: String){
+        
         if (device?.isTorchModeSupported(.on))! {
             let textToDisplay = Array(withText)
             shouldContinueFlashing = true

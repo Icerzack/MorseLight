@@ -13,6 +13,7 @@ enum AppStrings: String, CaseIterable {
     case mainScreenOutputAreaHint
     case mainScreenFlashButtonStart
     case mainScreenFlashButtonStop
+    case mainScreenErrorMessageNoFlashlight
     case settingsScreenTitle
     case settingsScreenBlinkingSpeedTitle
     case settingsScreenDotSpeedTitle
@@ -48,7 +49,7 @@ final class LocalizationService {
         for str in AppStrings.allCases {
             switch str {
             case .mainScreenTitle:
-                currentAppStringsCollection[str] = "MorseLight  🔦"
+                currentAppStringsCollection[str] = "Morse Light  🔦"
             case .mainScreenInputAreaHint:
                 currentAppStringsCollection[str] = "Нажмите здесь, чтобы напечатать сообщение"
             case .mainScreenOutputAreaHint:
@@ -57,6 +58,8 @@ final class LocalizationService {
                 currentAppStringsCollection[str] = "Зажечь! 💡"
             case .mainScreenFlashButtonStop:
                 currentAppStringsCollection[str] = "Стоп! ⛔️"
+            case .mainScreenErrorMessageNoFlashlight:
+                currentAppStringsCollection[str] = "Ваше устройство не поддерживает функцию фонарика"
             case .settingsScreenTitle:
                 currentAppStringsCollection[str] = "Настройки  ⚙️"
             case .settingsScreenBlinkingSpeedTitle:
@@ -76,7 +79,7 @@ final class LocalizationService {
             case .settingsScreenAboutButton:
                 currentAppStringsCollection[str] = "О приложении"
             case .tabBarConvertButton:
-                currentAppStringsCollection[str] = "Конвертировать"
+                currentAppStringsCollection[str] = "Перевести"
             case .tabBarSettingsButton:
                 currentAppStringsCollection[str] = "Настройки"
             }
@@ -88,7 +91,7 @@ final class LocalizationService {
         for str in AppStrings.allCases {
             switch str {
             case .mainScreenTitle:
-                currentAppStringsCollection[str] = "MorseLight  🔦"
+                currentAppStringsCollection[str] = "Morse Light  🔦"
             case .mainScreenInputAreaHint:
                 currentAppStringsCollection[str] = "Tap here to type message"
             case .mainScreenOutputAreaHint:
@@ -97,6 +100,8 @@ final class LocalizationService {
                 currentAppStringsCollection[str] = "Flash! 💡"
             case .mainScreenFlashButtonStop:
                 currentAppStringsCollection[str] = "Stop! ⛔️"
+            case .mainScreenErrorMessageNoFlashlight:
+                currentAppStringsCollection[str] = "Your device doesn't support flashlight mode"
             case .settingsScreenTitle:
                 currentAppStringsCollection[str] = "Settings  ⚙️"
             case .settingsScreenBlinkingSpeedTitle:

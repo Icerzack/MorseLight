@@ -272,7 +272,7 @@ final class SettingsViewController: UIViewController {
     @objc func aboutTapped() {
         let messageView: MessageView = MessageView.viewFromNib(layout: .centeredView)
         messageView.configureBackgroundView(width: 250)
-        messageView.configureContent(title: "🕯️", body: "MorseLight 1.0 \n\n Developer: Max Kuznetsov \n Telegram: @icerzack", iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "Got it!") { _ in
+        messageView.configureContent(title: "🕯️", body: "Morse Light 1.0 \n\n Developer: Max Kuznetsov \n Telegram: @icerzack", iconImage: nil, iconText: nil, buttonImage: nil, buttonTitle: "OK") { button in
             SwiftMessages.hide()
         }
         messageView.backgroundView.layer.cornerRadius = 10
@@ -280,7 +280,7 @@ final class SettingsViewController: UIViewController {
         var config = SwiftMessages.defaultConfig
         config.presentationStyle = .center
         config.duration = .forever
-        config.dimMode = .blur(style: .dark, alpha: 0.8, interactive: true)
+        config.dimMode = .blur(style: .dark, alpha: 0.9, interactive: true)
         config.presentationContext  = .window(windowLevel: UIWindow.Level.statusBar)
         SwiftMessages.show(config: config, view: messageView)
     }
