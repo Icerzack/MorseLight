@@ -20,6 +20,8 @@
 
 ## О проекте
 
+[<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/2560px-Download_on_the_App_Store_Badge.svg.png" height="50">](https://apps.apple.com/app/id6445801371)
+
 Приложение, которое позволяет кодировать текст в код азбуки Морзе и транслировать его через вспышку (фонарик) смартфона.
 
 ## Используемые технологии
